@@ -2,7 +2,59 @@
 // Use this editor to write, compile and run your Java code online
 
 class HelloWorld {
+    public static void pascalTriangle(int n){
+        int i ,j ,k;
+        for(i = 1;i<=n;i++){
+            for(j = n - i;j>= 1;j--){
+                System.out.print(" ");
+            }
+            int x = 1;
+            for(k = 1;k<=i;k++){
+                System.out.print(x + " ");
+                x = x * (i - k)/k;
+            }
+            System.out.println();
+        }
+    }
     
+    public static void trianglePattern(int n){
+        int i ,j;
+        for(i=1;i<=n;i++){
+            for(j=n-i;j>=1;j--){
+                System.out.print(" ");
+            }
+            for(j=1;j<=i;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        //Diamond pattern
+        for(i=1;i<=n ;i++){
+            for(j=1;j<=i;j++){
+                System.out.print(" ");
+            }
+            for(j=n -1;j>=i;j--){
+                System.out.print(j + " ");// replace with stars for diamond
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void reverseLeftHalfPyramid(int n){
+        int  i ,j;
+        
+        for(i = 1;i<=n;i++){
+            for(j=1;j<= i;j++){
+                System.out.print(" ");
+            }
+            for(j= n;j>=i;j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+        
+    }
     
     public static void leftHalfPyramid(int n ){
         int i ,j;
@@ -173,6 +225,9 @@ class HelloWorld {
     
     
     public static void main(String[] args) {
+       pascalTriangle(6);
+        trianglePattern(6);
+        reverseLeftHalfPyramid(8);
         hollowSquare(7);
         numberTriangle(7);
         numberIncPyramid(7);
