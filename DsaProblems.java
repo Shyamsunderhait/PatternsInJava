@@ -182,3 +182,92 @@ public class FibonacciRecursive {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
+
+
+
+//String Questions 
+
+
+class HelloWorld {
+    
+    public static String reverseString(){
+        String input = "shyam";
+     String reversed = "";
+     
+     for(int i = input.length() - 1;i>=0;i--){
+         reversed += input.charAt(i);
+     }
+     return reversed;
+    
+    }
+    
+    public static Boolean isPalindrome(){
+        String input = "racecar";
+        
+        for(int i = 0;i<= input.length()/2;i++){
+            if(input.charAt(i) != input.charAt(input.length() - 1 - i)){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+    
+    public static String removeDuplicates(){
+        String input = "geeksforgeeks";
+        
+        String result = "";
+        
+        for(int i = 0;i<input.length();i++){
+            char character = input.charAt(i);
+            boolean isDub = false;
+            for(int j = 0;j< result.length();j++){
+                if(result.charAt(j) == character){
+                    isDub = true;
+                    break;
+                }
+            }
+            
+            if(!isDub){
+                result += character;
+                
+            }
+        }
+        return result;
+    }
+    
+    
+    public static int countOccurrences(String input,char target){
+         int count = 0;
+         
+         for(int i = 0;i< input.length();i++){
+             if(input.charAt(i) == target){
+                 count++;
+             }
+         }
+         return count;
+    }
+    
+    public static boolean areAnagrams(String s1, String s2)
+    {
+        // Sort both strings
+        char[] charArray1 = s1.toCharArray();
+        char[] charArray2 = s2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        // Compare sorted strings
+        return Arrays.equals(charArray1, charArray2);
+    }
+
+    
+    
+    
+    
+    public static void main(String[] args) {
+     System.out.println(reverseString());
+        System.out.println(isPalindrome());
+        System.out.println(removeDuplicates());
+        System.out.println(countOccurrences("shyamsunderhait",'a'));
+    }
+}
